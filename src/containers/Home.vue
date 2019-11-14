@@ -1,7 +1,15 @@
 <template>
-    <h1>Home</h1>
+    <div>
+        <hello-world description="Hello world to template initial" />
+    </div>
 </template>
 
 <script>
-export default {};
+import HelloWorld from '@/components/HelloWorld/HelloWorld.vue';
+
+export default {
+    components: {
+        HelloWorld,
+    },
+};
 </script>
