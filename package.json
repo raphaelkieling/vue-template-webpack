@@ -1,0 +1,73 @@
+{
+    "name": "vue-template-initial",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "dev": "webpack-dev-server --hot",
+        "build": "webpack",
+        "test": "jest",
+        "lint": "eslint src/** --ext .ts,.tsx",
+        "lint:fix": "yarn lint --fix"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.7.2",
+        "@babel/preset-env": "^7.7.1",
+        "@types/jest": "^24.0.23",
+        "@typescript-eslint/eslint-plugin": "^2.7.0",
+        "@typescript-eslint/parser": "^2.7.0",
+        "@vue/test-utils": "^1.0.0-beta.29",
+        "babel-core": "^7.0.0-bridge.0",
+        "chalk": "^3.0.0",
+        "css-loader": "^3.2.0",
+        "eslint": "^6.6.0",
+        "eslint-plugin-vue": "^6.0.1",
+        "file-loader": "^4.2.0",
+        "html-webpack-plugin": "^3.2.0",
+        "husky": "^3.0.9",
+        "jest": "^24.9.0",
+        "portfinder": "^1.0.25",
+        "ts-jest": "^24.1.0",
+        "ts-loader": "^6.2.1",
+        "typescript": "^3.7.2",
+        "url-loader": "^2.2.0",
+        "vue-jest": "^3.0.5",
+        "vue-loader": "^15.7.2",
+        "vue-style-loader": "^4.1.2",
+        "vue-template-compiler": "^2.6.10",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10",
+        "webpack-dev-server": "^3.9.0"
+    },
+    "husky": {
+        "pre-commit": "yarn test"
+    },
+    "dependencies": {
+        "@vue/composition-api": "^0.3.2",
+        "vue": "^2.6.10"
+    },
+    "jest": {
+        "moduleFileExtensions": [
+            "js",
+            "ts",
+            "vue"
+        ],
+        "modulePaths": [
+            "<rootDir>/src",
+            "<rootDir>/node_modules"
+        ],
+        "transform": {
+            ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
+            ".*\\.(ts)$": "ts-jest"
+        },
+        "moduleNameMapper": {
+            "^@/(.*)$": "<rootDir>/src/$1"
+        },
+        "globals": {
+            "vue-jest": {
+                "tsConfigFile": "tsconfig.json"
+            }
+        },
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$"
+    }
+}
