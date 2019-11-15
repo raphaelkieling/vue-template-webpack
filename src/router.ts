@@ -6,8 +6,8 @@ const routes: RouteConfig[] = [
         component: () => import('@/containers/Home.vue'),
     },
     {
-        path: '/about',
-        component: () => import('@/containers/About.vue'),
+        path: '/login',
+        component: () => import('@/containers/Login/Login.vue'),
     },
 ];
 
