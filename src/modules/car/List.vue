@@ -1,7 +1,6 @@
 <template>
     <div>
-        <h1>List</h1>
-        <b-table :data="data" :loading="isLoading"> </b-table>
+        <b-table :data="data" :columns="columns" :loading="isLoading" />
     </div>
 </template>
 
@@ -12,12 +11,27 @@ export default {
         const data = ref([
             {
                 id: 1,
-                first_name: 'Raphael',
+                model: 'Civic',
+            },
+        ]);
+
+        const columns = ref([
+            {
+                field: 'id',
+                label: 'ID',
+                width: '60',
+                numeric: true,
+                searchable: true,
+            },
+            {
+                field: 'model',
+                label: 'Model',
+                searchable: true,
             },
         ]);
         const isLoading = ref(false);
 
-        return { data, isLoading };
+        return { data, isLoading, columns };
     },
 };
 </script>

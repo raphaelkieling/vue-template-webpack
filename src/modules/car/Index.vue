@@ -1,7 +1,6 @@
 <template>
     <div class="container">
-        <h1>Carro</h1>
-
+        <h1 class="is-size-3">Carro</h1>
         <router-view />
     </div>
 </template>
