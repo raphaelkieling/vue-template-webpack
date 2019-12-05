@@ -1,13 +1,27 @@
 import VueRouter, { RouteConfig } from 'vue-router';
+import { Module } from 'webpack';
+
+const cache: { [key: string]: Module } = {};
+
+function loadAllModules(r: any) {
+    r.keys().forEach((key: string) => {
+        cache[key] = r(key);
+    });
+}
+
+loadAllModules(require.context('./modules/', true, /index.ts$/));
+
+console.log(Object.entries(cache)[0][1]);
 
 const routes: RouteConfig[] = [
     {
         path: '/',
-        component: () => import('@/containers/Home.vue'),
+        component: () => import('@/pages/Home.vue'),
+        children: [],
     },
     {
         path: '/about',
-        component: () => import('@/containers/About.vue'),
+        component: () => import('@/pages/About.vue'),
     },
 ];
 
