@@ -1,6 +1,6 @@
 <template>
     <div class="hero is-dark is-fullheight is-vcentered">
-        <login-form :data="data" class="login-form-container" />
+        <login-form :data="data" class="login-form-container" @submit="submit" />
     </div>
 </template>
 
@@ -10,13 +10,17 @@ import { reactive } from '@vue/composition-api';
 
 export default {
     components: { LoginForm },
-    setup() {
+    setup(_, { root }) {
         const data = reactive({
             username: '',
             password: '',
         });
 
-        return { data };
+        const submit = () => {
+            root.$router.push('/car');
+        };
+
+        return { data, submit };
     },
 };
 </script>

@@ -8,7 +8,7 @@
             <b-input v-model="data.password" />
         </b-field>
 
-        <b-button class="is-dark is-fullwidth">Submit</b-button>
+        <b-button class="is-dark is-fullwidth" @click="$emit('submit')">Submit</b-button>
     </section>
 </template>
 
