@@ -1,8 +1,29 @@
 module.exports = {
     commands: {
         apresentacao: {
-            args: ["entidade", "entidade_descricao"],
+            args: [{
+                    type: "text",
+                    message: "Qual o nome da entidade?",
+                    name: "entidade"
+                },
+                {
+                    type: "text",
+                    message: "Qual a descrição da entidade?",
+                    name: "entidade_descricao"
+                },
+                {
+                    type: "multiselect",
+                    name: "qual_criar",
+                    message: "Quais arquivos deseja criar",
+                    choices: [
+                        { title: "API", value: "api" }
+                    ]
+                }
+            ],
             transports: [{
+                    validator: ({ args }) => {
+                        return args.qual_criar.includes("api");
+                    },
                     from: './api.terun',
                     to: './{{entidade | lowercase}}/api.ts'
                 },
