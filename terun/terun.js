@@ -25,6 +25,10 @@ module.exports = {
                 {
                     from: './templates/router.terun',
                     to: '../src/modules/{{entity | underscore | lowercase}}/router.ts'
+                },
+                {
+                    from: './templates/api.terun',
+                    to: '../src/modules/{{entity | underscore | lowercase}}/api.ts'
                 }
             ]
         }

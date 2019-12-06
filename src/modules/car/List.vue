@@ -7,14 +7,20 @@
 
 <script>
 import { ref } from '@vue/composition-api';
+import api from './api';
+
 export default {
     setup() {
-        const data = ref([
-            {
-                id: 1,
-                model: 'Civic',
-            },
-        ]);
+        const data = ref([]);
+        const isLoading = ref(false);
+
+        const getAll = async () =>{
+            isLoading.value = true;
+            data.value = await api.getAll();
+            isLoading.value = false;
+        }
+
+        getAll();
 
         const columns = ref([
             {
@@ -28,7 +34,6 @@ export default {
                 searchable: true,
             },
         ]);
-        const isLoading = ref(false);
 
         return { data, isLoading, columns };
     },
