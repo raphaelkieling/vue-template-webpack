@@ -17,10 +17,14 @@ const modules = Object.keys(cache).reduce((acc, next) => {
 
 const routes: RouteConfig[] = [
     {
-        path: '/',
+        path: '/home',
         component: () => import('@/pages/Layout.vue'),
         children: modules,
     },
+    {
+        path: '/',
+        redirect: '/home'
+    }
 ];
 
 export default new VueRouter({ routes });

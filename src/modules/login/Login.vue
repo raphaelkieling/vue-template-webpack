@@ -1,5 +1,5 @@
 <template>
-    <div class="hero is-dark is-fullheight is-vcentered">
+    <div class="hero is-primary is-fullheight is-vcentered">
         <login-form :data="data" class="login-form-container" @submit="submit" />
     </div>
 </template>

@@ -1,10 +1,7 @@
 <template>
     <div class="container">
-        <h1>Home</h1>
         <div class="home-container">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, est ipsa. Nostrum suscipit ratione
-            alias itaque! Placeat exercitationem cum pariatur, aperiam officia ratione corrupti ut inventore fuga id,
-            quidem ea.
+            <img :src="img">
         </div>
     </div>
 </template>
@@ -23,5 +20,9 @@ export default {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+}
+
+.home-container img {
+    height: 200px;
 }
 </style>
