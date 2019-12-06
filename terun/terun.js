@@ -1,47 +1,36 @@
+const EntityPlugin = require("@terun/plugin-entity")
+
 module.exports = {
     commands: {
         apresentacao: {
-            args: [{
-                    type: "text",
-                    message: "Qual o nome da entidade?",
-                    name: "entidade"
-                },
-                {
-                    type: "text",
-                    message: "Qual a descrição da entidade?",
-                    name: "entidade_descricao"
-                },
-                {
-                    type: "multiselect",
-                    name: "qual_criar",
-                    message: "Quais arquivos deseja criar",
-                    choices: [
-                        { title: "API", value: "api" }
-                    ]
-                }
+            plugins: [
+                new EntityPlugin()
+            ],
+            args: [
+                "entity_name_show",
             ],
             transports: [{
                     validator: ({ args }) => {
                         return args.qual_criar.includes("api");
                     },
                     from: './api.terun',
-                    to: './{{entidade | lowercase}}/api.ts'
+                    to: './{{entidade | underscore |lowercase}}/api.ts'
                 },
                 {
                     from: './Index.terun',
-                    to: './{{entidade | lowercase}}/Index.vue'
+                    to: './{{entidade | underscore |lowercase}}/Index.vue'
                 },
                 {
                     from: './index.terun',
-                    to: './{{entidade | lowercase}}/index.ts'
+                    to: './{{entidade | underscore |lowercase}}/index.ts'
                 },
                 {
                     from: './router.terun',
-                    to: './{{entidade | lowercase}}/router.ts'
+                    to: './{{entidade | underscore |lowercase}}/router.ts'
                 },
                 {
                     from: './List.terun',
-                    to: './{{entidade | lowercase}}/List.vue'
+                    to: './{{entidade | underscore |lowercase}}/List.vue'
                 }
             ]
         }

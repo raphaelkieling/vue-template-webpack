@@ -22,18 +22,14 @@ export default {
 
         getAll();
 
-        // TODO: Implementar campos
         const columns = ref([
+            {{#fields}}
             {
-                field: 'id',
-                label: 'ID',
-                numeric: true,
-            },
-            {
-                field: 'model',
-                label: 'Model',
+                field: '{{name}}',
+                label: '{{name}}',
                 searchable: true,
             },
+            {{/fields}}
         ]);
 
         return { data, isLoading, columns };

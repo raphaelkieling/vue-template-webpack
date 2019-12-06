@@ -1,10 +1,10 @@
 export default [
     {
-        path: '/{{entidade | lowercase}}',
+        path: '/{{entity | underscore | lowercase}}',
         component: () => import('./Index.vue'),
         meta: {
             entity: true,
-            navbarName: '{{entidade_descricao}}'
+            navbarName: '{{entity_name_show}}'
         },
         children: [
             {
@@ -13,7 +13,7 @@ export default [
             },
             {
                 path: '/',
-                redirect: '/{{entidade | lowercase}}/list',
+                redirect: '/{{entity | underscore | lowercase}}/list',
             },
         ],
     },

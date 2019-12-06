@@ -1,11 +1,14 @@
 import createMock from '../../utils/mock';
 
-// TODO: Implementar
-const mock = createMock(['id', 'model']);
+const mock = createMock([
+    {{#fields}}
+    '{{name}}',
+    {{/fields}}
+]);
 
 export default {
-    baseUrl: '/{{entidade | lowercase}}',
+    baseUrl: '/{{entity | underscore | lowercase}}',
     getAll() {
-        return mock.many(4);
+        return mock.many();
     }
 };

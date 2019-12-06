@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h1 class="is-size-3">{{entidade_descricao}}</h1>
+        <h1 class="is-size-3">{{entity_name_show}}</h1>
         <router-view />
     </div>
 </template>
