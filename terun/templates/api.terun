@@ -1,3 +1,5 @@
+// Tempo de hoje: {{tempo}}
+
 import createMock from '../../utils/mock';
 
 const mock = createMock([
