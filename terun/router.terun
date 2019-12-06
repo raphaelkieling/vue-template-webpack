@@ -1,0 +1,20 @@
+export default [
+    {
+        path: '/{{entidade | lowercase}}',
+        component: () => import('./Index.vue'),
+        meta: {
+            entity: true,
+            navbarName: '{{entidade_descricao}}'
+        },
+        children: [
+            {
+                path: 'list',
+                component: () => import('./List.vue'),
+            },
+            {
+                path: '/',
+                redirect: '/{{entidade | lowercase}}/list',
+            },
+        ],
+    },
+];
