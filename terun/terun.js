@@ -6,31 +6,30 @@ module.exports = {
             plugins: [
                 new EntityPlugin()
             ],
-            args: [
-                "entity_name_show",
-            ],
+            args: [{
+                type: "text",
+                name: "entity_name_show",
+                message: "Como descreveria a entidade?"
+            }, ],
             transports: [{
-                    validator: ({ args }) => {
-                        return args.qual_criar.includes("api");
-                    },
                     from: './api.terun',
-                    to: './{{entidade | underscore |lowercase}}/api.ts'
+                    to: './{{entity | underscore |lowercase}}/api.ts'
                 },
                 {
                     from: './Index.terun',
-                    to: './{{entidade | underscore |lowercase}}/Index.vue'
+                    to: './{{entity | underscore |lowercase}}/Index.vue'
                 },
                 {
                     from: './index.terun',
-                    to: './{{entidade | underscore |lowercase}}/index.ts'
+                    to: './{{entity | underscore |lowercase}}/index.ts'
                 },
                 {
                     from: './router.terun',
-                    to: './{{entidade | underscore |lowercase}}/router.ts'
+                    to: './{{entity | underscore |lowercase}}/router.ts'
                 },
                 {
                     from: './List.terun',
-                    to: './{{entidade | underscore |lowercase}}/List.vue'
+                    to: './{{entity | underscore |lowercase}}/List.vue'
                 }
             ]
         }
