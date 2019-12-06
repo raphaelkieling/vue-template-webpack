@@ -1,0 +1,11 @@
+import createMock from '../../utils/mock';
+
+// TODO: {{descricao_todo_mock}}
+const mock = createMock([]);
+
+export default {
+    baseUrl: '/{{entidade_nome | lowercase}}',
+    getAll() {
+        return mock.many(4);
+    }
+};
