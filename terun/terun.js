@@ -1,9 +1,13 @@
+const EntityPlugin = require("@terun/plugin-entity")
+
 module.exports = {
     commands: {
         example: {
+            plugins:[
+                new EntityPlugin()
+            ],
             args: [
                 "entity_name_show",
-                "entity"
             ],
             transports: [
                 {

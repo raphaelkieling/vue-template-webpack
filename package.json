@@ -50,6 +50,7 @@
         "pre-push": "yarn test"
     },
     "dependencies": {
+        "@terun/plugin-entity": "^1.1.8",
         "@types/vue-router": "^2.0.0",
         "@vue/composition-api": "^0.3.2",
         "buefy": "^0.8.6",
